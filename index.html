@@ -58,6 +58,22 @@
 		  animation: slide-in-from-left 1.4s;
 		}
 
+		@keyframes slide-in-from-bottom {
+			0% { transform: translateY(100%); }
+			100% { transform: translateY(0%); }
+		}
+		.slide-in-element-from-bottom {
+		  animation: slide-in-from-bottom 1.4s;
+		}
+
+		@keyframes slide-in-from-top {
+			0% { transform: translateY(-100%); }
+			100% { transform: translateY(0%); }
+		}
+		.slide-in-element-from-top {
+		  animation: slide-in-from-top 1.4s;
+		}
+
 		@keyframes slide-in-from-right {
 			0% { transform: translateX(100%); }
 			100% { transform: translateX(0%); }
@@ -94,7 +110,7 @@
   </head>
   <body class="ignore" style="overflow-x:hidden" data-spy="scroll" data-target=".navbar" data-offset="50">
 	  <div class="start-img-container class="ignore"">
-		<img class = "Start-img ignore" src="kids-waving.jpg"></img>
+		<img class = "Start-img" src="kids-waving.jpg"></img>
 		<div class="centered-in-image ignore"><h1><strong style="font-size: 15vw!important;">KOSOVO GENOCIDE</strong></h1></div>
 	  </div>
 
@@ -178,7 +194,7 @@
 			Maecenas euismod faucibus nibh non mollis. Aenean mollis tincidunt imperdiet. Sed quis molestie mauris. Aenean erat lorem, semper eu eros vitae, pharetra rutrum enim. Proin in maximus justo, nec laoreet nisi. Quisque condimentum accumsan consequat. Integer commodo, velit vel eleifend placerat, libero ligula ultricies nulla, sit amet pretium mi neque vitae velit. Phasellus id tortor ornare, lacinia elit eget, auctor risus. Mauris lobortis tempus laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae cursus lacus, vitae gravida mauris. Phasellus tempor ante in pharetra aliquet. Cras rutrum mattis nisl non fermentum.</p>
 		</div>
 
-		<div id="Methods" class="hidden">
+		<div id="Methods">
 			<br><br>
 			<h2 class = "display-2 text-center">Methods</h2>
 			<p><span class="tab"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque magna. Aliquam tincidunt placerat lacinia. Curabitur imperdiet quam nunc, et pretium libero blandit ut. Suspendisse mollis et lacus vitae porta. Quisque eu tincidunt ipsum. Aenean elementum sed felis id rhoncus. Cras condimentum sed mauris eu rutrum. Nam vel sapien rutrum, bibendum ligula id, accumsan lorem. Curabitur porta nec lacus non egestas.
@@ -265,11 +281,12 @@
 
 	var animateHTML = function() {
 	  var elems;
+	  var rand;
 	  var windowHeight;
 	  function init() {
 	  	var elements = document.getElementsByTagName("*");
 	  	for(el of elements){
-	  		if(!el.classList.contains("ignore"))
+	  		if(!el.classList.contains("ignore")&&el.tagName!="DIV")
 	  		el.classList.add("hidden");
 	  	}
 	    elems = document.querySelectorAll('.hidden');
@@ -285,8 +302,28 @@
 	    for (var i = 0; i < elems.length; i++) {
 	      var positionFromTop = elems[i].getBoundingClientRect().top;
 	      if (positionFromTop - windowHeight <= 0) {
-	      	//if(elems[i].tagName == "h2")
+	      	if(elems[i].tagName == "H2" && elems[i].classList.contains("hidden")){
+	      		rand = Math.floor(Math.random()*2);
+	      		console.log(rand);
+	      		if(rand==0)
+	      			elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-left');
+				if(rand==1)
+	      			elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-right');
+				if(rand==2)
+	      			elems[i].className = elems[i].className.replace( 'hidden', 'pop-in-element');
+	      	}else if(elems[i].tagName == "P" && elems[i].classList.contains("hidden")){
+	      	//console.log(rand);
+	      		if(rand==0)
+	      			elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-right');
+				if(rand==1)
+	      			elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-left');
+				if(rand==2)
+	      			elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-bottom');
+	      	}else if(elems[i].tagName == "IMG"){
+	      		elems[i].className = elems[i].className.replace( 'hidden', 'pop-in-element');
+	      	}else{
 				elems[i].className = elems[i].className.replace( 'hidden', 'spin-in-element');
+			}
 	      }
 	    }
 	  }
