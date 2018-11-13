@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="en"  class="ignore">
+  <head class="ignore">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,27 +33,80 @@
 		.tab{
 			margin-left: 20px;
 		}
+		#MLAcitations{
+			font-family: "Times New Roman", Times, serif;
+			font-size: 12pt;
+		}
+		.negative-indent {
+		    margin-left: 40px;
+		    text-indent: -40px;
+		}
+
+		@keyframes fade-in {
+		    from {opacity: 0; transform: scale(.7,.7)}
+		    to {opacity: 1;}
+		}
+		.fade-in-element {
+		  animation: fade-in 1.4s;
+		}
+
+		@keyframes slide-in-from-left {
+			0% { transform: translateX(-100%); }
+			100% { transform: translateX(0%); }
+		}
+		.slide-in-element-from-left {
+		  animation: slide-in-from-left 1.4s;
+		}
+
+		@keyframes slide-in-from-right {
+			0% { transform: translateX(100%); }
+			100% { transform: translateX(0%); }
+		}
+		.slide-in-element-from-right {
+		  animation: slide-in-from-right 1.4s;
+		}
+
+		@keyframes pop-in {
+		    from {transform: scale(0,0)}
+		    to {opacity: 1;}
+		}
+		.pop-in-element {
+		  animation: pop-in 1.4s;
+		}
+
+		@keyframes spin-in {
+		    0% {transform: scale(.1,.1) rotate(0deg);}
+		    100% {transform:scale(1,1) rotate(360deg);}
+		}
+		.spin-in-element {
+		  animation: spin-in 1.4s;
+		}
+
+
+		.hidden {
+		  opacity: 0;
+		}
     </style>
 
     <script>
 
     </script>
   </head>
-  <body>
-	  <div class="start-img-container">
-		<img class = "Start-img" src="kids-waving.jpg"></img>
-		<div class="centered-in-image"><h1><strong style="font-size: 15vw!important;">KOSOVO GENOCIDE</strong></h1></div>
+  <body class="ignore" style="overflow-x:hidden" data-spy="scroll" data-target=".navbar" data-offset="50">
+	  <div class="start-img-container class="ignore"">
+		<img class = "Start-img ignore" src="kids-waving.jpg"></img>
+		<div class="centered-in-image ignore"><h1><strong style="font-size: 15vw!important;">KOSOVO GENOCIDE</strong></h1></div>
 	  </div>
 
-	  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+	  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top ignore">
 			  <a class="navbar-brand" href="#">Navbar</a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			  </button>
 
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-				  <li class="nav-item active">
+			  <div class="collapse navbar-collapse ignore" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto ignore">
+				  <li class="nav-item">
 					<a class="nav-link" href="#Prejudice">Prejudice/Hatred <span class="sr-only">(current)</span></a>
 				  </li>
 				  <li class="nav-item">
@@ -81,11 +134,10 @@
 					  <a class="dropdown-item" href="#Documentaries">Documentaries</a>
 					</div>
 				  </li>
+				  <li class="nav-item">
+				  		<a class="nav-link" href="#MLAcitations">Citations</a>
+				  </li>
 				</ul>
-				<form class="form-inline my-2 my-lg-0">
-				  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
 			  </div>
 			</nav>
 		<div class = "container-fluid">
@@ -126,7 +178,7 @@
 			Maecenas euismod faucibus nibh non mollis. Aenean mollis tincidunt imperdiet. Sed quis molestie mauris. Aenean erat lorem, semper eu eros vitae, pharetra rutrum enim. Proin in maximus justo, nec laoreet nisi. Quisque condimentum accumsan consequat. Integer commodo, velit vel eleifend placerat, libero ligula ultricies nulla, sit amet pretium mi neque vitae velit. Phasellus id tortor ornare, lacinia elit eget, auctor risus. Mauris lobortis tempus laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae cursus lacus, vitae gravida mauris. Phasellus tempor ante in pharetra aliquet. Cras rutrum mattis nisl non fermentum.</p>
 		</div>
 
-		<div id="Methods">
+		<div id="Methods" class="hidden">
 			<br><br>
 			<h2 class = "display-2 text-center">Methods</h2>
 			<p><span class="tab"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque magna. Aliquam tincidunt placerat lacinia. Curabitur imperdiet quam nunc, et pretium libero blandit ut. Suspendisse mollis et lacus vitae porta. Quisque eu tincidunt ipsum. Aenean elementum sed felis id rhoncus. Cras condimentum sed mauris eu rutrum. Nam vel sapien rutrum, bibendum ligula id, accumsan lorem. Curabitur porta nec lacus non egestas.
@@ -190,12 +242,59 @@
 			<br><br>
 			Maecenas euismod faucibus nibh non mollis. Aenean mollis tincidunt imperdiet. Sed quis molestie mauris. Aenean erat lorem, semper eu eros vitae, pharetra rutrum enim. Proin in maximus justo, nec laoreet nisi. Quisque condimentum accumsan consequat. Integer commodo, velit vel eleifend placerat, libero ligula ultricies nulla, sit amet pretium mi neque vitae velit. Phasellus id tortor ornare, lacinia elit eget, auctor risus. Mauris lobortis tempus laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae cursus lacus, vitae gravida mauris. Phasellus tempor ante in pharetra aliquet. Cras rutrum mattis nisl non fermentum.</p>
 		</div>
-
+		<div id="MLAcitations">
+			<p class="text-center"><strong >Works Cited</strong></p>
+			<p class="negative-indent">Maecenas euismod faucibus nibh non mollis. Aenean mollis tincidunt imperdiet. Sed quis molestie mauris. Aenean erat lorem, semper eu varius eget nisi eget, porttitor fermentum augue. Donec dictum vestibulum ex, quis finibus tellus egestas sodales. Praesent et mollis lorem. Suspendisse potenti. Proin pretium pretium a 	</p>
+		</div>
 	</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+	$("a[href^='#']").click(function(e) {
+		e.preventDefault();
+
+		var position = $($(this).attr("href")).offset().top;
+
+		$("body, html").animate({
+			scrollTop: position
+		} /* speed */ );
+	});
+
+	var animateHTML = function() {
+	  var elems;
+	  var windowHeight;
+	  function init() {
+	  	var elements = document.getElementsByTagName("*");
+	  	for(el of elements){
+	  		if(!el.classList.contains("ignore"))
+	  		el.classList.add("hidden");
+	  	}
+	    elems = document.querySelectorAll('.hidden');
+	    windowHeight = window.innerHeight;
+	    addEventHandlers();
+	    checkPosition();
+	  }
+	  function addEventHandlers() {
+	    window.addEventListener('scroll', checkPosition);
+	    window.addEventListener('resize', init);
+	  }
+	  function checkPosition() {
+	    for (var i = 0; i < elems.length; i++) {
+	      var positionFromTop = elems[i].getBoundingClientRect().top;
+	      if (positionFromTop - windowHeight <= 0) {
+	      	//if(elems[i].tagName == "h2")
+				elems[i].className = elems[i].className.replace( 'hidden', 'spin-in-element');
+	      }
+	    }
+	  }
+	  return {
+	    init: init
+	  };
+	};
+	animateHTML().init();
+    </script>
   </body>
 </html>
