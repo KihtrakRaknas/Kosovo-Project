@@ -303,7 +303,6 @@
 
 	var animateHTML = function() {
 	  var elems;
-	  var rand;
 	  var windowHeight;
 	  function init() {
 	  	var elements = document.getElementsByTagName("*");
@@ -325,22 +324,9 @@
 	      var positionFromTop = elems[i].getBoundingClientRect().top;
 	      if (positionFromTop - windowHeight <= 0) {
 	      	if(elems[i].tagName == "H2" && elems[i].classList.contains("hidden")){
-	      		rand = Math.floor(Math.random()*2);
-	      		console.log(rand);
-	      		if(rand==0)
-	      			elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-left');
-				if(rand==1)
 	      			elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-right');
-				if(rand==2)
-	      			elems[i].className = elems[i].className.replace( 'hidden', 'pop-in-element');
 	      	}else if(elems[i].tagName == "P" && elems[i].classList.contains("hidden")){
-	      	//console.log(rand);
-	      		if(rand==0)
-	      			elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-right');
-				if(rand==1)
 	      			elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-left');
-				if(rand==2)
-	      			elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-bottom');
 	      	}else if(elems[i].tagName == "IMG"){
 	      		elems[i].className = elems[i].className.replace( 'hidden', 'pop-in-element');
 	      	}else if(elems[i].tagName == "H4"){
