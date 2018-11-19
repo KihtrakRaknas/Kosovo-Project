@@ -202,9 +202,6 @@ input:checked + .slider:before {
     }
     </style>
 
-    <script>
-
-    </script>
   </head>
   <body class="ignore" style="overflow-x:hidden" data-spy="scroll" data-target=".navbar" data-offset="50">
 	  <div class="start-img-container ignore">
@@ -496,6 +493,10 @@ input:checked + .slider:before {
 
     	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 		<script>
+    var start = false;
+    function start(){
+      start = true;
+      }
 		  // Initialize Firebase
 		  var config = {
 		    apiKey: "AIzaSyAjgdd8Bc-yxC4Ors8t76ZYXsavQABh5I4",
@@ -523,13 +524,16 @@ input:checked + .slider:before {
 
 		  });
 		  //window.addEventListener('scroll', updateFire);
-		  function updateFire(){
-        if(Timer<=0){
-		  		firebase.database().ref("scrollKosovo").update({
-				  	scroll: window.pageYOffset
-  		  	});
-        }
-		  }
+
+  		  function updateFire(){
+          if(start){
+            if(Timer<=0){
+    		  		firebase.database().ref("scrollKosovo").update({
+    				  	scroll: window.pageYOffset
+      		  	});
+            }
+          }
+  		  }
 
 	</script>
 
