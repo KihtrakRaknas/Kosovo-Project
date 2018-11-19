@@ -194,6 +194,11 @@ input:checked + .slider:before {
       font-size: 12pt;
       font-family: "Times New Roman";
     }
+    .active{
+      background-color: lightgrey;
+      border-radius: 10px;
+      color:black!important;
+    }
     </style>
 
     <script>
@@ -263,7 +268,8 @@ input:checked + .slider:before {
 				  <div class="col-md-4"><img src="kosovoSpecialReport.jpg"><p class="caption">Famous Article from Time Magazine</p></div>
 				</div>
 			</div>
-
+</div>
+<div class = "container-fluid">
 			<div id="Prejudice">
 				<br><br>
 				<h2 class = "display-2 text-center">Prejudice / Hatred</h2>
@@ -282,7 +288,8 @@ input:checked + .slider:before {
 					<div class="col-md-8"><p class="long-text"><span class="tab"></span>Ethnic Albanians control Kosovo and were the third largest ethnic group at the time of the conflict. Yugoslavia defines Albanians as a “nationality”, not an autonomous nation within, and yet Serbs, Croats, Bosnians, Slovenes, and Macedonians are not classified this way. Serbia viewed Kosovo’s autonomy as threat to Serbian sovereignty and its interests, worrying that it diluted their power. The poverty occuring in Kosovo does not help to ease tensions, either. Since Kosovo was largely inhabited by Muslim Albanians, Serbs and other minorities felt persecuted by the Albanian majority. The Serbs were sometimes subject to harassment or discrimination. When Slobodan Milosevic became president of the Serbian republic in 1989, he placed Kosovo under the control of the Serbian capital. Milosevic and the Serbian minority in Kosovo had long objected to the fact that Muslim Albanians controlled a land they considered sacred. Needless to say, Kosovar Albanians are not happy about their loss of autonomy and resist Serbian control.</p></div>
 				</div>
 			</div>
-
+    </div>
+    <div class = "container-fluid">
 			<div id="Victims">
 				<br><br>
 				<h2 class = "display-3 text-center">Victims / Perpetrators / Methods</h2>
@@ -308,7 +315,8 @@ input:checked + .slider:before {
                     <div class="col-md-8"><p class="long-text"><span class="tab"></span>Yugoslav and Serbian forces responded to the KLA’s attacks with a ruthless counteroffensive and a program of what they called “ethnic cleansing” - essentially, genocide. Serbian forces drove out all of Kosovo’s ethnic Albanians, displacing hundreds of thousands of people. In 1998 alone the Serbian military and police conflict with Kosovar Albanians killed 1,500 Albanians and displaced 400,000. What would happen is that the army and police surrounded a village, then shelled it from a distance. Horror then manifested in the form of mass rapes, beatings, tortures, mutilizations, and killings, all meant to force victims from their homes. The remaining villagers were gathered in one place while the police stole personal possessions from them then looted and burned the remains of the village. The men were separated from women and interrogated about the KLA - those suspected of ties with the KLA were executed. Women, children, and the elderly were often expelled. The Serbs then claimed the “cleansed” area as their own. Thousands of Kosovar Albanians fled from their homes. The event that finally caused the international community to take action occurred on January 15, 1999. Serb-allied forces murdered 45 Albanian civilians at Racak, mutilated most of the bodies, then attempted to cover of the horrific event. Widespread media coverage of the massacre enraged the international community.</p></div>
                 </div>
 			</div>
-
+    </div>
+    <div class = "container-fluid">
             <div id="NATO">
                 <br><br>
                 <h2 class = "display-3 text-center">NATO Intervention</h2>
@@ -320,7 +328,8 @@ input:checked + .slider:before {
                     <div class="col-md-9"><p class="long-text"><span class="tab"></span>The event at Racak finally convinced the US, UK, and other North Atlantic Treaty Organization(NATO) nations to meet Rambouillet, France and discuss how to end the conflict. Negotiations with Milosevic failed to work, so NATO begins a series air strikes on Serbian military targets on March 23, 1999. This operation was known as Operation Allied Force. Unfortunately, Allied Force actually emboldened Milosevic’s forces - they committed even more atrocities of mass rape, beatings and killings. Ethnic cleansing skyrocketed as Milosevic intensified his efforts in clearing Kosovo of its Muslim non-Serb population; hundreds of thousands more ethnic Albanians were driven out of their homes and into neighbouring countries. NATO intensified the air effort, and even considered deploying ground troops to quell the violence, but never did. The air campaign lasted a total of eleven weeks before Milosevic finally accepted a peace agreement that would end the war and agreed to pull Yugoslav troops out of Kosovo.</p></div>
                 </div>
             </div>
-
+          </div>
+          <div class = "container-fluid">
             <div id="Ending">
                 <br><br>
                 <h2 class = "display-2 text-center">Ending / Aftermath</h2>
@@ -350,7 +359,8 @@ input:checked + .slider:before {
                   <div class="col-md-4"><img src="http://4.bp.blogspot.com/-vPLlrWp8mx4/UzCJNZvwWqI/AAAAAAABC2Q/Mq-oGtxW4_I/s1600/nato_bombs.gif"  style="width:100%"></div>
                 </div>
             </div>
-
+          </div>
+          <div class = "container-fluid">
 			<div id="Links">
 				<br><br>
 				<h2 class = "display-2 text-center">Links</h2>
@@ -436,9 +446,11 @@ input:checked + .slider:before {
                     </div>
                 </div>
 			</div>
-      <br>
-      <br>
+    </div>
+    <div class = "container-fluid white">
 			<div id="MLAcitations">
+        <br>
+        <br>
         <h6 class="text-center">Works Cited</h6>
         <p class="negative-indent">
         "Albanian Woman Weeps at Grave." Modern Genocide: Understanding Causes and Consequences, ABC-CLIO, 2018, moderngenocide.abc-clio.com/Search/Display/1704512. Accessed 18 Nov. 2018.
@@ -473,7 +485,7 @@ input:checked + .slider:before {
         </p>
 
 			</div>
-
+    </div>
 		</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -502,6 +514,15 @@ input:checked + .slider:before {
         toggleItem.style.display = "block";
 	  	}
     }
+    var color=255;
+    for(el of document.getElementsByClassName("container-fluid")){
+      if(!el.classList.contains("white"))
+        el.style.backgroundColor="rgb("+color+", "+color+", "+color+")"
+      if(color==255)
+        color-=20;
+      else
+        color=255;
+    }
 
     function stopAnim(){
       var elements = document.getElementsByTagName("*");
@@ -510,12 +531,21 @@ input:checked + .slider:before {
       }
     }
 
-    document.onkeypress = function (e) {
+    document.body.addEventListener('keydown', function (e) {
+      e = e || window.event;
+      console.log(e.keyCode);
+      if(e.keyCode == 97||e.keyCode == 65)
+        toggle();
+
+
+      });
+
+    /*document.onkeypress = function (e) {
       e = e || window.event;
       console.log(e.keyCode);
       if(e.keyCode == 97)
         toggle();
-    };
+    };*/
 
 	$("a[href^='#']").click(function(e) {
 		e.preventDefault();
