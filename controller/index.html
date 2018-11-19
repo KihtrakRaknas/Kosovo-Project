@@ -63,10 +63,16 @@
 
     for(var i= 0; i!=400;i++){
       var div = document.createElement("DIV");
-      if(i%2==1)
-      div.style.backgroundColor= "lightblue";
       div.style.height="5vh";
       div.style.width="100%";
+      if(i%2==1){
+        div.style.backgroundColor= "lightblue";
+        var div2 = document.createElement("DIV");
+        div2.style.height="100%";
+        div2.style.backgroundColor= "blue";
+        div2.style.width=i*5%100+"%";
+        div.appendChild(div2);
+      }
       document.body.appendChild(div);
     }
 	</script>
