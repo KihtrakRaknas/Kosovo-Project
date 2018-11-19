@@ -593,7 +593,10 @@ input:checked + .slider:before {
 	      	}else if(elems[i].tagName == "H6"){
 	      		elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-right');
 	      	} if(elems[i].tagName == "LI"){
-	      		elems[i].className = elems[i].className.replace( 'hidden', 'spin-in-element');
+            if(!window.mobilecheck())
+                elems[i].className = elems[i].className.replace( 'hidden', 'spin-in-element');
+            else
+              elems[i].classList.remove("hidden");
 	      	}else{
             if(!window.mobilecheck())
 				        elems[i].className = elems[i].className.replace( 'hidden', 'fade-in-element');
