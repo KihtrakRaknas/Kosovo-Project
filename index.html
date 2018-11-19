@@ -640,14 +640,21 @@ input:checked + .slider:before {
 	    messagingSenderId: "288023573199"
 	  };
 	  firebase.initializeApp(config);
+	  	   firebase.database().ref("scrollKosovo").update({
+	  	  	scroll: 0
+	  });
 	  firebase.database().ref("scrollKosovo").on("value",function(snap){
 	  	var position = snap.val()["scroll"];
-
-	  	      $("body, html").animate({
-	  	  		scrollTop: position
-				},0);
+		console.log(position);
+	  	      window.scrollTo(0, position);;
 
 	  });
+	  window.addEventListener('scroll', updateFire);
+	  function updateFire(){
+	  		firebase.database().ref("scrollKosovo").update({
+			  	scroll: window.pageYOffset
+	  	});
+	  }
 
 	</script>
   </body>
