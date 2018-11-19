@@ -493,6 +493,38 @@ input:checked + .slider:before {
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyAjgdd8Bc-yxC4Ors8t76ZYXsavQABh5I4",
+		    authDomain: "rick-roller.firebaseapp.com",
+		    databaseURL: "https://rick-roller.firebaseio.com",
+		    projectId: "rick-roller",
+		    storageBucket: "rick-roller.appspot.com",
+		    messagingSenderId: "288023573199"
+		  };
+		  firebase.initializeApp(config);
+		  	   firebase.database().ref("scrollKosovo").update({
+		  	  	scroll: 0
+		  });
+		  firebase.database().ref("scrollKosovo").on("value",function(snap){
+		  	var position = snap.val()["scroll"];
+			console.log(position);
+		  	      window.scrollTo(0, position);;
+
+		  });
+		  //window.addEventListener('scroll', updateFire);
+		  function updateFire(){
+		  		firebase.database().ref("scrollKosovo").update({
+				  	scroll: window.pageYOffset
+		  	});
+		  }
+
+	</script>
+
+
     <script>
 
     window.mobilecheck = function() {
@@ -577,6 +609,7 @@ input:checked + .slider:before {
 	    window.addEventListener('resize', init);
 	  }
 	  function checkPosition() {
+	  	updateFire();
 	    for (var i = 0; i < elems.length; i++) {
 	      var positionFromTop = elems[i].getBoundingClientRect().top;
 	      if (positionFromTop - windowHeight <= 0) {
@@ -627,35 +660,5 @@ input:checked + .slider:before {
     }
   }
     </script>
-
-	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyAjgdd8Bc-yxC4Ors8t76ZYXsavQABh5I4",
-	    authDomain: "rick-roller.firebaseapp.com",
-	    databaseURL: "https://rick-roller.firebaseio.com",
-	    projectId: "rick-roller",
-	    storageBucket: "rick-roller.appspot.com",
-	    messagingSenderId: "288023573199"
-	  };
-	  firebase.initializeApp(config);
-	  	   firebase.database().ref("scrollKosovo").update({
-	  	  	scroll: 0
-	  });
-	  firebase.database().ref("scrollKosovo").on("value",function(snap){
-	  	var position = snap.val()["scroll"];
-		console.log(position);
-	  	      window.scrollTo(0, position);;
-
-	  });
-	  window.addEventListener('scroll', updateFire);
-	  function updateFire(){
-	  		firebase.database().ref("scrollKosovo").update({
-			  	scroll: window.pageYOffset
-	  	});
-	  }
-
-	</script>
   </body>
 </html>
