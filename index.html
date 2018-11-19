@@ -125,6 +125,10 @@
 		.long-text{
 			font-size:17pt;
 		}
+    .MLAcitations{
+      font-size: 12pt;
+      font-family: "Times New Roman";
+    }
     </style>
 
     <script>
@@ -305,7 +309,7 @@
                         </div>
                         <div class="col-4-md" >
                             <div class="card mb-3" style="margin:10px;max-width:30rem;">
-                                <img class="card-img-top" src="https://img.youtube.com/vi/jo8k44_WgGg/hqdefault.jpg" alt="Video Thumbnails">
+                                <img class="card-img-top" src="https://img.youtube.com/vi/jo8k44_WgGg/mqdefault.jpg" alt="Video Thumbnails">
                                     <div class="card-body">
                                         <h5 class="card-title">How did Kosovo become a country? | The Economist</h5>
                                         <p class="card-text">Source: <a href="https://www.youtube.com/watch?v=jo8k44_WgGg">https://www.youtube.com/</a></p>
@@ -360,8 +364,10 @@
                     </div>
                 </div>
 			</div>
-
+      <br>
+      <br>
 			<div id="MLAcitations">
+        <h6 class="text-center">Works Cited</h6>
         <p class="negative-indent">
         "Albanian Woman Weeps at Grave." Modern Genocide: Understanding Causes and Consequences, ABC-CLIO, 2018, moderngenocide.abc-clio.com/Search/Display/1704512. Accessed 18 Nov. 2018.
         </p>
@@ -410,7 +416,7 @@
       return check;
     };
 
-    if(window.mobilecheck){
+    if(window.mobilecheck()){
       var elements = document.getElementsByTagName("*");
 	  	for(el of elements){
 	  		if(el.tagName=="H2")
@@ -462,8 +468,10 @@
 	      		elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-bottom');
 	      	}else if(elems[i].tagName == "H1"){
 	      		elems[i].className = elems[i].className.replace( 'hidden', 'fade-in-element');
+	      	}else if(elems[i].tagName == "H6"){
+	      		elems[i].className = elems[i].className.replace( 'hidden', 'slide-in-element-from-right');
 	      	}else{
-            if(!window.mobilecheck)
+            if(!window.mobilecheck())
 				        elems[i].className = elems[i].className.replace( 'hidden', 'fade-in-element');
             else
               elems[i].classList.remove("hidden");
